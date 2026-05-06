@@ -1,8 +1,14 @@
-# Pocket TTS
-
-<img width="1446" height="622" alt="pocket-tts-logo-v2-transparent" src="https://github.com/user-attachments/assets/637b5ed6-831f-4023-9b4c-741be21ab238" />
+# Pocket TTS — Custom Fork
 
 A lightweight text-to-speech (TTS) application designed to run efficiently on CPUs.
+
+> **Fork note:** This is a customized fork of [kyutai-labs/pocket-tts](https://github.com/kyutai-labs/pocket-tts) with Windows-friendly launch scripts, a dark-mode web UI with streaming playback, and a default voice preset.
+
+**Customizations in this fork:**
+- `start-pocket-tts.bat` / `start-pocket-tts.ps1` — One-click Windows launcher that auto-opens the browser
+- Dark-mode Tailwind UI with live streaming audio playback and timing stats
+- Default voice preset (`azelma`) in the voice URL field
+- Favicon support (`/favicon.ico` endpoint)
 Forget about the hassle of using GPUs and web APIs serving TTS models. With Kyutai's Pocket TTS, generating audio is just a pip install and a function call away.
 
 Supports Python 3.10, 3.11, 3.12, 3.13 and 3.14. Requires PyTorch 2.5+. Does not require the gpu version of PyTorch.
