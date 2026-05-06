@@ -2,7 +2,7 @@
 
 import os
 import sys
-from PyInstaller.utils.hooks import collect_all, collect_data
+from PyInstaller.utils.hooks import collect_all
 
 block_cipher = None
 
@@ -29,6 +29,14 @@ datas.append((os.path.join(base_path, 'pocket_tts', 'static'), 'pocket_tts/stati
 for config_dir in ['configs', os.path.join(base_path, 'pocket_tts', 'utils', 'configs')]:
     if os.path.exists(config_dir):
         datas.append((config_dir, 'configs'))
+
+# Add default_parameters module data
+try:
+    import pocket_tts.default_parameters as dp
+    dp_path = os.path.dirname(dp.__file__)
+    datas.append((dp_path, 'pocket_tts'))
+except Exception:
+    pass
 
 a = Analysis(
     ['pocket-tts-launcher.py'],
